@@ -11,7 +11,7 @@
   }
 
   window.saveTrelloCard = function(idList, key, token) {
-    var opts;
+    var opts, _ref;
     if (!(typeof jQuery !== "undefined" && jQuery !== null)) {
       setTimeout((function() {
         return saveTrelloCard(idList, key, token);
@@ -24,7 +24,7 @@
       data: {
         key: key,
         token: token,
-        name: document.title,
+        name: (_ref = document.title) != null ? _ref : "<none>",
         desc: document.location.href,
         idList: idList
       },

@@ -15,7 +15,7 @@ window.saveTrelloCard = (idList, key, token) ->
     data:
       key: key
       token: token
-      name: document.title
+      name: document.title ? "<none>"
       desc: document.location.href
       idList: idList
     dataType: "json"
