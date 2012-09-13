@@ -22,7 +22,7 @@ startSetup = () ->
     span.append("<select class=\"js-select\"></select>")
     select = span.find(".js-select")
     for board in data.boards
-      select.append("<option value=\"board.id\">board.name</option>")
+      select.append("<option value=\"#{board.id}\">#{board.name}</option>")
     button = $(".js-board-select-button")
     button.click( () ->
       id = select.val()
@@ -38,7 +38,7 @@ setupLists = (idBoard) ->
     span.append("<select class=\"js-select\"></select>")
     select = span.find(".js-select")
     for list in data.lists
-      select.append("<option value=\"list.id\">list.name</option>")
+      select.append("<option value=\"#{list.id}\">#{list.name}</option>")
     button = $(".js-list-select-button")
     button.click( () ->
       idList = select.val()
