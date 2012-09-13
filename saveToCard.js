@@ -6,7 +6,7 @@
     e = document.createElement('script');
     e.setAttribute('type', 'text/javascript');
     e.setAttribute('charset', 'UTF-8');
-    e.setAttribute('src', 'http://code.jquery.com/jquery-1.7.1.min.js');
+    e.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js');
     document.body.appendChild(e);
   }
 
