@@ -6,6 +6,12 @@
     e.setAttribute('charset','UTF-8');
     e.setAttribute('src','http://thedufer.github.com/Trello-Bookmarklet-Maker/saveToCard.js');
     document.body.appendChild(e);
-    setTimeout(function(){saveTrelloCard("#{idList}","#{key}","#{token}")},0);
+    function checkSave() {
+      if(window.saveTrelloCard)
+        saveTrelloCard("#{idList}", "#{key}", "#{token}");
+      else
+        setTimeout(checkSave, 0);
+    }
+    setTimeout(checkSave,0);
   }
 )()
