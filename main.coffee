@@ -14,8 +14,6 @@ auth = () ->
       write: true
     expiration: "never"
 
-key = "d1ab807253d29b75aa6ba1569bb76"
-
 startSetup = () ->
   #get boards
   $(".js-list-div").hide()
@@ -51,6 +49,7 @@ setupLists = (idBoard) ->
 
 makeBookmarklet = (idBoard, idList) ->
   token = Trello.token()
+  key = Trello.key()
   bookmarklet = "(function(){function b(){if(window.saveTrelloCard)saveTrelloCard(\"#{idList}\",\"#{key}\",\"#{token}\");else setTimeout(b,0)}var a=document.createElement(\"script\");a.setAttribute(\"type\",\"text/javascript\");a.setAttribute(\"charset\",\"UTF-8\");a.setAttribute(\"src\",\"http://thedufer.github.com/Trello-Bookmarklet-Maker/saveToCard.js\");document.body.appendChild(a);setTimeout(b,0)})()"
   a = $('.js-show-link')
   a.attr("href", "javascript:#{bookmarklet}")
