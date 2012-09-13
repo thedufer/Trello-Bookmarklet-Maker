@@ -37,6 +37,7 @@ setupLists = (idBoard) ->
   Trello.boards.get(idBoard, {lists: "open"}, (data) ->
     $(".js-list-div").show()
     span = $(".js-list-selector")
+    span.empty()
     span.append("<select class=\"js-select\"></select>")
     select = span.find(".js-select")
     for list in data.lists
@@ -49,7 +50,6 @@ setupLists = (idBoard) ->
   )
 
 makeBookmarklet = (idBoard, idList) ->
-  console.log idBoard, idList
   token = Trello.token()
   bookmarklet = "(function(){function b(){if(window.saveTrelloCard)saveTrelloCard(\"#{idList}\",\"#{key}\",\"#{token}\");else setTimeout(b,0)}var a=document.createElement(\"script\");a.setAttribute(\"type\",\"text/javascript\");a.setAttribute(\"charset\",\"UTF-8\");a.setAttribute(\"src\",\"http://thedufer.github.com/Trello-Bookmarklet-Maker/saveToCard.js\");document.body.appendChild(a);setTimeout(b,0)})()"
   a = $('.js-show-link')
