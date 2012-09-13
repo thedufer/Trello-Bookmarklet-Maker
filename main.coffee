@@ -17,6 +17,7 @@ auth = () ->
 startSetup = () ->
   #get boards
   $(".js-list-div").hide()
+  $(".js-link-div").hide()
   Trello.get("members/me", {boards: "open"}, (data) ->
     span = $(".js-board-selector")
     span.append("<select class=\"js-select\"></select>")
@@ -53,6 +54,7 @@ makeBookmarklet = (idBoard, idList) ->
   bookmarklet = "(function(){function b(){if(window.saveTrelloCard)saveTrelloCard(\"#{idList}\",\"#{key}\",\"#{token}\");else setTimeout(b,0)}var a=document.createElement(\"script\");a.setAttribute(\"type\",\"text/javascript\");a.setAttribute(\"charset\",\"UTF-8\");a.setAttribute(\"src\",\"http://thedufer.github.com/Trello-Bookmarklet-Maker/saveToCard.js\");document.body.appendChild(a);setTimeout(b,0)})()"
   a = $('.js-show-link')
   a.attr("href", "javascript:#{bookmarklet}")
-  a.html("Bookmark this link")
+  a.html("Site to Trello Card")
+  $(".js-link-div").show()
     
 $(checkAuth)
