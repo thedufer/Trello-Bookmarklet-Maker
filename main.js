@@ -79,7 +79,7 @@
     var a, bookmarklet, key, token;
     token = Trello.token();
     key = Trello.key();
-    bookmarklet = "(function(){function b(){if(window.saveTrelloCard)saveTrelloCard(\"" + idList + "\",\"" + key + "\",\"" + token + "\");else setTimeout(b,0)}var a=document.createElement(\"script\");a.setAttribute(\"type\",\"text/javascript\");a.setAttribute(\"charset\",\"UTF-8\");a.setAttribute(\"src\",\"http://thedufer.github.com/Trello-Bookmarklet-Maker/saveToCard.js\");document.body.appendChild(a);setTimeout(b,0)})()";
+    bookmarklet = "(function(){function b(){if(window.saveTrelloCard)saveTrelloCard(\"" + idList + "\",\"" + key + "\",\"" + token + "\");else setTimeout(b,0)}var a=document.createElement(\"script\");a.setAttribute(\"type\",\"text/javascript\");a.setAttribute(\"charset\",\"UTF-8\");a.setAttribute(\"src\",\"https://raw.github.com/gist/3716000/25ca42dde5ebb018adad31603bf10f2943cbc379/saveToCard.js\");document.body.appendChild(a);setTimeout(b,0)})()";
     a = $('.js-show-link');
     a.attr("href", "javascript:" + bookmarklet);
     a.html("Site to Trello Card");
