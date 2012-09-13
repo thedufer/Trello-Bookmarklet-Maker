@@ -9,13 +9,13 @@ window.saveTrelloCard = (idList, key, token) ->
   if !jQuery?
     setTimeout((() -> saveTrelloCard(idList, key, token)), 0)
     return
-  opts = 
+  opts =
     url: "https://api.trello.com/1/cards"
     type: "POST"
     data:
       key: key
       token: token
-      name: document.title ? "<none>"
+      name: if document.title == "" then "<none>" else document.title
       desc: document.location.href
       idList: idList
     dataType: "json"
