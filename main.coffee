@@ -1,5 +1,5 @@
 checkAuth = () ->
-  Trello.authorize(interactive: false, error: () ->
+  Trello.authorize(interactive: false, persist: false, error: () ->
     auth()
   success: () ->
     startSetup()
@@ -18,7 +18,7 @@ startSetup = () ->
   #get boards
   $(".js-list-div").hide()
   Trello.get("members/me", {boards: "open"}, (data) ->
-    console.log data
+    debugger
     span = $(".js-board-selector")
     span.append("<select class=\"js-select\"></select>")
     select = span.find(".js-select")
