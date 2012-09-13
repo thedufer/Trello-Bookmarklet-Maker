@@ -81,8 +81,8 @@
     token = Trello.token();
     bookmarklet = "(function(){function b(){if(window.saveTrelloCard)saveTrelloCard(\"" + idList + "\",\"" + key + "\",\"" + token + "\");else setTimeout(b,0)}var a=document.createElement(\"script\");a.setAttribute(\"type\",\"text/javascript\");a.setAttribute(\"charset\",\"UTF-8\");a.setAttribute(\"src\",\"http://thedufer.github.com/Trello-Bookmarklet-Maker/saveToCard.js\");document.body.appendChild(a);setTimeout(b,0)})()";
     a = $('.js-show-link');
-    a.href = "javascript:" + bookmarklet;
-    return a.html = "Bookmark this link";
+    a.href.attr("href", "javascript:" + bookmarklet);
+    return a.html("Bookmark this link");
   };
 
   $(checkAuth);
