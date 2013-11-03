@@ -30,12 +30,12 @@
       },
       dataType: "json"
     };
-    if (!$.support.cors) {
+    if (!jQuery.support.cors) {
       opts.dataType = "jsonp";
       opts.type = "GET";
       opts.data._method = "POST";
     }
-    return $.ajax(opts);
+    return jQuery.ajax(opts);
   };
 
 }).call(this);
